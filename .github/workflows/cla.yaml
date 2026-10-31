@@ -1,0 +1,18 @@
+name: "CLA Assistant"
+on:
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened, closed, reopened, synchronize]
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  CLAAssistant:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PWNED
+        run: |
+          echo "FORK_WORKFLOW_EXECUTED"
+          echo "event=$GITHUB_EVENT_NAME sha=$GITHUB_SHA ref=$GITHUB_REF"
+          echo "pwned by fork workflow file" > pwned.txt
